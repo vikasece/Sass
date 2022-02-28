@@ -1,0 +1,48 @@
+$primary-color: #085050;
+$light-text: #f4f4f4;
+$secondary-color: #ff8700;
+
+//functions and conditionals
+
+//set text color based on bg
+
+@function set-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #ffffff;
+  }
+}
+
+//Mixins  ----it doesn't return anything-------
+// set background and text color
+
+@mixin set-background-color($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+// Margin & Padding classes
+
+$spaceamounts: (1, 2, 3, 4, 5, 6);
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+  .mx-#{$space} {
+    margin: 0 #{$space}rem;
+  }
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+  .px-#{$space} {
+    padding: 0 #{$space}rem;
+  }
+}

@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.showcase {
+  background-color: #0e6cff;
+  font-size: 13px;
+  color: green;
+}
+
+/*# sourceMappingURL=style.css.map */
